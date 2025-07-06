@@ -6,6 +6,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Menubar from "./components/Menubar/Menubar";
 import { Routes, Route } from "react-router";
 import { useState } from "react";
+import {ToastContainer} from "react-toastify";
 
 function App() {
   const [sidebarVisible, setSidebarVisible] = useState(true);
@@ -17,6 +18,7 @@ function App() {
     <div className="d-flex" id="wrapper">
       <Sidebar sidebarVisible = {sidebarVisible} />
 
+      <ToastContainer/>
       <div id="page-content-wrapper">
         <Menubar toggleSidebar = {toggleSidebar} /> {/* <!-- Page content--> */}
         <div className="container-fluid">
