@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# JetBrains IDE files
+.idea/
+*.iml

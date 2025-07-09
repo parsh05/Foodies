@@ -3,7 +3,7 @@ import { categories } from "../../assets/assets";
 import './ExploreMenu.css';
 
 
-const ExploreMenu = () => {
+const ExploreMenu = ({category, setCategory}) => {
 
   const menuRef = useRef(null);
 
@@ -32,8 +32,8 @@ const ExploreMenu = () => {
         {
           categories.map((item, index) => {
             return (
-              <div key={index} className="text-center explore-menu-list-item">
-                <img src={item.icon} alt="" className="rounded-circle " height={128} width={128} />
+              <div key={index} className="text-center explore-menu-list-item" onClick={() => setCategory(prev => prev === item.category? 'All' : item.category)} >
+                <img src={item.icon} alt="" className={item.category === category ? 'rounded-circle active ' : 'rounded-circle'} height={128} width={128} />
                 <p className="mt-2 fw-bold">{item.category}</p>
               </div>
             )

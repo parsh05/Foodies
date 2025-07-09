@@ -9,3 +9,7 @@
     gap: 25px;
 }
  */
+
+ .active{
+    color: tomato !important;
+ }
