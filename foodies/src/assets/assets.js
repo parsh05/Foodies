@@ -9,6 +9,9 @@ import rolls from "./roll.jpg";
 import salad from "./salad.jpg";
 import cakes from "./strawberry.jpg";
 
+import profile from './profile.png'
+import delivery from './delivery-man.png'
+
 export const categories = [
   {
     category: "Biryani",
@@ -44,4 +47,6 @@ export const categories = [
 export const assets = {
   logo,
   cart,
+  profile,
+  delivery
 };
