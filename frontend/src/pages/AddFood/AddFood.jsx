@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { toast } from "react-toastify";
+import { addFood } from "../../services/foodService.js";
 import { assets } from "./../../assets/assets";
-import {addFood} from "../../services/foodService.js";
-import {toast} from "react-toastify";
 
 const AddFood = () => {
   const [image, setImage] = useState(false);
@@ -31,10 +31,10 @@ const AddFood = () => {
 
       // Reset form
       setData({
-        name: '',
-        description: '',
-        price: '',
-        category: 'Biryani'
+        name: "",
+        description: "",
+        price: "",
+        category: "Biryani",
       });
       setImage(null);
     } catch (e) {
@@ -48,7 +48,7 @@ const AddFood = () => {
         <div className="card col-md-4">
           <div className="card-body">
             <h2 className="mb-3">Add Food text</h2>
-            <form onSubmit={onSubmitHandler} >
+            <form onSubmit={onSubmitHandler}>
               <div className="mb-3">
                 <label htmlFor="image" className="form-label">
                   <img
@@ -118,6 +118,9 @@ const AddFood = () => {
                   <option value="Chinese">Chinese</option>
                   <option value="Salad">Salad</option>
                   <option value="Ice cream">Ice cream</option>
+                  <option value="Momos">Momos</option>
+                  <option value="Golgappe">Golgappe</option>
+                  <option value="Chowmein">chowmein</option>
                 </select>
               </div>
               <div className="mb-3">
@@ -127,7 +130,7 @@ const AddFood = () => {
                 <input
                   type="number"
                   className="form-control"
-                  placeholder='₹200'
+                  placeholder="₹200"
                   id="price"
                   required
                   name="price"

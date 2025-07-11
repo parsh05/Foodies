@@ -17,7 +17,7 @@ const cartItems = foodList.filter((food) => quantities[food.id] > 0);
 
 
   return (
-    <div className="container py-5">
+    <div className="container py-5 mt-md-5">
       <h1 className="mb-5">Your Shopping Cart</h1>
       <div className="row">
         <div className="col-lg-8">

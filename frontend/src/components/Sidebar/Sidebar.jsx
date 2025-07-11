@@ -10,7 +10,7 @@ const Sidebar = ({ sidebarVisible }) => {
       id="sidebar-wrapper"
     >
       <div className="sidebar-heading border-bottom bg-light">
-        <img src={assets.logo} height={36} width={30}/>
+        <img src={assets.logo} height={48} width={48}/>
         </div>
       <div className="list-group list-group-flush">
         <Link

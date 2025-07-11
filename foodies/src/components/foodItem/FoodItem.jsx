@@ -1,9 +1,10 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
 
 const FoodItem = ({ name, description, id, imageUrl, price }) => {
-  const {increaseQty, decreaseQty, quantities} = useContext(StoreContext);
+  const {token, increaseQty, decreaseQty, quantities} = useContext(StoreContext);
+  const navigate = useNavigate();
   
   return (
     <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 d-flex justify-content-center">
@@ -43,16 +44,16 @@ const FoodItem = ({ name, description, id, imageUrl, price }) => {
 
           {quantities[id] > 0 ? (
             <div className="d-flex align-items-center gap-2">
-              <button className="btn btn-danger btn-sm" onClick={()=> decreaseQty(id)}>
+              <button className="btn btn-danger btn-sm" onClick={()=> token? decreaseQty(id) : navigate('/login')}>
                 <i className="bi bi-dash-circle"></i>
                 <span className="fw-bold">{quantities[id]}</span>
               </button>
-              <button className="btn btn-success btn-sm" onClick={() => increaseQty(id)}>
+              <button className="btn btn-success btn-sm" onClick={() => token? increaseQty(id) : navigate('/login')}>
                 <i className="bi bi-plus-circle"></i>
               </button>
             </div>
           ) : (
-            <button className="btn btn-primary btn-sm" onClick={() => increaseQty(id)}>
+            <button className="btn btn-primary btn-sm" onClick={() => token? increaseQty(id) : navigate('/login')}>
               <i className="bi bi-plus-circle"></i>
             </button>
           )}

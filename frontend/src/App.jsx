@@ -1,12 +1,12 @@
 import React from "react";
 import AddFood from "./pages/AddFood/AddFood";
 import ListFood from "./pages/ListFood/ListFood";
-import Order from "./pages/order/Order";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Menubar from "./components/Menubar/Menubar";
 import { Routes, Route } from "react-router";
 import { useState } from "react";
 import {ToastContainer} from "react-toastify";
+import Orders from "./pages/Orders/Orders";
 
 function App() {
   const [sidebarVisible, setSidebarVisible] = useState(true);
@@ -25,7 +25,7 @@ function App() {
           <Routes>
             <Route path="/add" element={<AddFood />} />
             <Route path="/list" element={<ListFood />} />
-            <Route path="/orders" element={<Order />} />
+            <Route path="/orders" element={<Orders />} />
             <Route path="/" element={<ListFood />} />
           </Routes>
         </div>

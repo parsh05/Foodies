@@ -19,7 +19,10 @@ const Menubar = () => {
     navigate("/");
   };
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav
+      className="navbar navbar-expand-lg bg-body-tertiary d-none d-md-block position-fixed top-0 start-0 w-100 mb-md-5"
+      style={{ zIndex: 1000 }}
+    >
       <div className="container">
         <img src={assets.logo} alt="" className="mx-4" height={48} width={48} />
         <button
@@ -105,7 +108,7 @@ const Menubar = () => {
               <div className="dropdown text-end">
                 <a
                   href="#"
-                  className="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                  className="d-block link-body-emphasis text-decoration-none"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
@@ -116,15 +119,16 @@ const Menubar = () => {
                     height={32}
                     className="rounded-circle"
                   />
+                  <h3>{}</h3>
                 </a>
-                <ul className="dropdown-menu text-small ">
+                <ul className="dropdown-menu text-small">
                   <li
                     className="dropdown-item"
                     onClick={() => navigate("/myorders")}
                   >
                     Orders
                   </li>
-                  <li className="dropdown-item" onClick={logout}>
+                  <li className="dropdown-item logout-hover" onClick={logout}>
                     Logout
                   </li>
                 </ul>

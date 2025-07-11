@@ -7,7 +7,6 @@ import { StoreContext } from "../../context/StoreContext";
 import { calculateCartTotals } from "../../util/CartUtil";
 import { RAZORPAY_KEY } from "../../util/constants";
 import "./PlaceOrder.css";
-import Razorpay from "razorpay";
 
 const PlaceOrder = () => {
   const { foodList, quantities, setQuantities, token } =
@@ -124,23 +123,23 @@ const PlaceOrder = () => {
         navigate("/");
       }
     } catch (e) {
-      toast.error('Payment failed. Please try again.')
-      throw e
+      toast.error("Payment failed. Please try again.");
+      throw e;
     }
   };
 
   const deleteOrder = async (orderId) => {
-      try{
-        await axios.delete("http://localhost:8080/api/orders/" + orderId, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-      }catch(e){
-        toast.error("Something went wrong. Contact Support.")
-        throw e;
-      }
-  }
+    try {
+      await axios.delete("http://localhost:8080/api/orders/" + orderId, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+    } catch (e) {
+      toast.error("Something went wrong. Contact Support.");
+      throw e;
+    }
+  };
 
-  const clearCart = async() => {
+  const clearCart = async () => {
     try {
       axios.delete("http://localhost:8080/api/cart", {
         headers: { Authorization: `Bearer ${token}` },
@@ -151,9 +150,7 @@ const PlaceOrder = () => {
       toast.error("Error while clearing the cart");
       throw error;
     }
-  }
-
-
+  };
 
   const cartItems = foodList.filter((food) => quantities[food.id] > 0);
 

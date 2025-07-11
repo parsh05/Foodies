@@ -1,10 +1,9 @@
+import parcel from "./11949.jpg";
 import logo from './logo.png';
-import parcel from './parcel.png'
-import upload from './upload.jpg'
+import upload from "./image-upload.png";
 
 export const assets = {
-    logo,
-    parcel,
-    upload
-}
-    
+  logo,
+  parcel,
+  upload,
+};

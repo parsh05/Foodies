@@ -4,6 +4,7 @@ import FoodItem from "../foodItem/FoodItem";
 
 const FoodDisplay = ({category, searchText}) => {
   const { foodList } = useContext(StoreContext);
+   
   // console.log(foodList);
 
   const filteredFoods = foodList.filter(food => (
@@ -11,7 +12,7 @@ const FoodDisplay = ({category, searchText}) => {
   ));
   
   return (
-    <div className="container">
+    <div className="container mt-5">
       <div className="row">
         {filteredFoods.length > 0 ? (
           filteredFoods.map((food, index) => (

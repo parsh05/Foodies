@@ -7,7 +7,7 @@ import { StoreContext } from './../../context/StoreContext';
 const FoodDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const {increaseQty} = useContext(StoreContext);
+  const {token, increaseQty} = useContext(StoreContext);
 
   const [data, setData] = useState({});
 
@@ -27,6 +27,10 @@ const FoodDetails = () => {
 
 
   const addToCart = () => {
+    if(!token){
+      navigate('/login')
+      return
+    }
     increaseQty(data.id)
     navigate('/cart')
   }

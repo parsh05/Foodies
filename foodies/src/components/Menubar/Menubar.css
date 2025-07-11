@@ -10,10 +10,14 @@
 }
  */
 
- .active{
-    color: tomato !important;
- }
+.active {
+  color: tomato !important;
+}
 
- .dropdown-menu li{
-    cursor: pointer;
- }
+.dropdown-menu li {
+  cursor: pointer;
+}
+
+.logout-hover:hover {
+  color: red !important;
+}
